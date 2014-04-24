@@ -4,7 +4,6 @@
 #include <string>
 #include <ctime>
 #include <conio.h>
-#include <queue>
 #include <windows.h>
 #include <vector>
 #include <ctime>
