@@ -2,7 +2,7 @@
 #include "voiture.h"
 using namespace std;
 
-       Route::Route() : m_lenght(9),m_type(false),m_vmax(3),m_luck(10),m_q(50)  {m_road.reserve(10);}
+       Route::Route() : m_lenght(69),m_type(false),m_vmax(3),m_luck(10),m_q(50)  {m_road.reserve(70);}
        Route::Route(int lenght, int type, int vmax) : m_lenght(lenght),m_type(type),m_vmax(vmax),m_luck(50),m_q(50)   {m_road.reserve(lenght+1);}
 
        int Route::nmbr_car() const{
@@ -63,7 +63,7 @@ using namespace std;
            cout<<endl;
 
            for (int col=0;col<=m_lenght;col++) {
-                cout<<col;
+            //    cout<<col;
            }
            cout<<endl;
            cout<<endl;
@@ -72,8 +72,6 @@ using namespace std;
            cout<<endl;
            cout<<endl;
            cout<<endl;
-           for (int d=0;d<=m_lenght;d++) {
-           }
 
         maj_route();
        }
