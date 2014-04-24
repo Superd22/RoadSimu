@@ -53,13 +53,13 @@ int main()
     Route PetiteRoute;
 
     char key;
-    unsigned long dt = 10; //in seconds
+    unsigned long dt = 1; //in seconds
     int acount=0;
     Timer ta;
     ta.start();
      while(true){
 
-         if (ta.elapsedTime() > dt/1000) {
+         if (ta.elapsedTime() > dt) {
          //  if (true) {
                 key='W';
 
@@ -69,8 +69,16 @@ int main()
                         case '0': exit(0); break;
                         case 'n': PetiteRoute.add_car();break;
                         case 'b': PetiteRoute.remove_car();break;
-                        case '+': dt = dt+100;break;
-                        case '-': dt = dt-100;break;
+                        case '+': dt = dt+0.1;break;
+                        case '-': dt = dt-0.1;break;
+
+                        case 'q': if(PetiteRoute.m_q>=10) PetiteRoute.m_q = PetiteRoute.m_q-10;break;
+                        case 'Q': if(PetiteRoute.m_q<=90) PetiteRoute.m_q = PetiteRoute.m_q+10;break;
+
+                        case 'p': if(PetiteRoute.m_luck>=10) PetiteRoute.m_luck = PetiteRoute.m_luck-10;break;
+                        case 'P': if(PetiteRoute.m_luck<=90) PetiteRoute.m_luck = PetiteRoute.m_luck+10;break;
+
+                        case 'm': PetiteRoute.change_type();break;
                     }
 
                 clear_screen();
@@ -78,9 +86,20 @@ int main()
                 PetiteRoute.display();
 
                 acount++;
-                cout<<acount;
                 cout<<"\n DeltaT : "<<dt<<" secondes";
                 cout<<"\n "<<PetiteRoute.nmbr_car()<<" Voitures sur la route";
+
+                // Si en version VDR
+                if (PetiteRoute.m_type) {
+                    cout<<"\n Type Freinage : VDR ";
+                    cout<<"\n Probabilité redépart (q) :"<<PetiteRoute.m_q<<"%       ";
+                }
+                else {
+                    cout<<"\n Type Freinage : NaSch ";
+                }
+                    cout<<"\n Probabilité Freinage (p) : "<<PetiteRoute.m_luck<<"%        ";
+
+                cout<<"\n tour #"<<acount;
                 // Remise en marche du timer.
                 ta.start();
             }

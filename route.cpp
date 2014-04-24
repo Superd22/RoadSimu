@@ -2,8 +2,8 @@
 #include "voiture.h"
 using namespace std;
 
-       Route::Route() : m_lenght(72),m_type(0),m_vmax(3)  {m_road.reserve(72);}
-       Route::Route(int lenght, int type, int vmax) : m_lenght(lenght),m_type(type),m_vmax(vmax)  {m_road.reserve(lenght);}
+       Route::Route() : m_lenght(9),m_type(false),m_vmax(3),m_luck(10),m_q(50)  {m_road.reserve(10);}
+       Route::Route(int lenght, int type, int vmax) : m_lenght(lenght),m_type(type),m_vmax(vmax),m_luck(50),m_q(50)   {m_road.reserve(lenght+1);}
 
        int Route::nmbr_car() const{
             // Le nombre de voiture est juste égal a la taille du tableau m_road
@@ -42,14 +42,18 @@ using namespace std;
            bool has_tutur = false;
            for (int col=0;col<=m_lenght;col++) {
             has_tutur = false;
+            int tur;
                 if(m_road.size() > 0){
-                    for (int i=0;(unsigned)i<=m_road.size();i++) {
-                        if(m_road[i].m_p == col) {has_tutur=true;}
+                    for (int i=0;(unsigned)i<m_road.size();i++) {
+
+                    int distance = m_road[i].m_p;
+                        if (distance > m_lenght) distance = (distance%m_lenght)-1;
+                            if(distance == col) {has_tutur=true;tur=i;}
                     }
                 }
 
                 if(has_tutur) {
-                   cout<<">";
+                   cout<<tur;
                 }
                 else {
                     cout<<"_";
@@ -57,6 +61,10 @@ using namespace std;
 
            }
            cout<<endl;
+
+           for (int col=0;col<=m_lenght;col++) {
+                cout<<col;
+           }
            cout<<endl;
            cout<<endl;
            cout<<endl;
@@ -75,4 +83,8 @@ using namespace std;
                  m_road[i].maj_voiture(*this);
                 }
             }
+        }
+
+        void Route::change_type() {
+            m_type = !m_type;
         }

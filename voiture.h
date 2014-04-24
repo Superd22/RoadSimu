@@ -68,6 +68,8 @@ class Voiture
      // @param : (route) road -> La route sur laquelle la voiture circule.
      // return void.
         void maj_step_four(Route road);
+
+        bool m_was_stopped;
 };
 
 #endif // VOITURE_H_INCLUDED

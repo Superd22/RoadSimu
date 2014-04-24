@@ -32,13 +32,19 @@ class Route
     // (Affichage PUIS mise-à-jour)
         void     display();
 
+    // change_type()
+    //  Change le type de freinage
+        void    change_type();
+
     // La longueur max de la route.
         int      m_lenght;
     // Le tableau de "voitures" sur la piste.
         vector< Voiture > m_road;
     // La vitesse maximale
         int      m_vmax;
-    // La probabilité de freinage
+    // La probabilité de redepart (q) -En %-
+        int      m_q;
+    // La probabilité de freinage (p) -En %-
         int      m_luck;
     // Le type de modélisation de freinage de la route.
         bool     m_type;
