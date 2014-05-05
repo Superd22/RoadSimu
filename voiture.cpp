@@ -51,13 +51,11 @@ using namespace std;
             else {
             if(m_a < road.m_vmax) m_a++;
             }
-            cout<<endl<<"Voiture #";
     }
 
     void Voiture::maj_step_two(Route road) {
         int d = distance_to_nearest(road);
-        cout<<"d "<<d;
-        if(m_a >= d) {m_a = d-1;cout<<"block"<<endl;}
+        if(m_a >= d) {m_a = d-1;}
     }
 
     void Voiture::maj_step_three(Route road) {
@@ -68,7 +66,7 @@ using namespace std;
 
     void Voiture::maj_step_four(Route road) {
         int distance = m_p + m_a;
-        if (distance > road.m_lenght) { distance = (distance%road.m_lenght+1)-1; }
+        if (distance > road.m_lenght) { distance = (distance%road.m_lenght+1)-2; }
         m_p = distance;
     }
 

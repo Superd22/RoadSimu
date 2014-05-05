@@ -1,12 +1,11 @@
 # depslib dependency file v1.0
-1398302773 source:c:\users\davidf\desktop\dropbox\fac\info121\road\roadsimu\main.cpp
+1399335418 source:c:\users\davidf\desktop\dropbox\fac\info121\road\roadsimu\main.cpp
 	<iostream>
 	<cstdio>
 	<fstream>
 	<string>
 	<ctime>
 	<conio.h>
-	<queue>
 	<windows.h>
 	<vector>
 	<ctime>
@@ -23,10 +22,10 @@
 1398302773 c:\users\davidf\desktop\dropbox\fac\info121\road\roadsimu\voiture.h
 	"route.h"
 
-1398302773 c:\users\davidf\desktop\dropbox\fac\info121\road\roadsimu\voiture.cpp
+1399335666 c:\users\davidf\desktop\dropbox\fac\info121\road\roadsimu\voiture.cpp
 	"voiture.h"
 
-1398302824 c:\users\davidf\desktop\dropbox\fac\info121\road\roadsimu\route.cpp
+1399335520 c:\users\davidf\desktop\dropbox\fac\info121\road\roadsimu\route.cpp
 	"route.h"
 	"voiture.h"
 
